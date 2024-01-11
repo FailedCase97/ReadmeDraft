@@ -9,3 +9,9 @@
 
 
 ## Manager Documentation:
+### purchaseSuccessfulNotification : Successfully Purchase
+### purchaseFailureNotification Purchase failed
+### restoreSuccessfulNotification
+### restoreFailureNotification
+### promotionPurchaseStartNotification
+### duplicatePurchasedNotification

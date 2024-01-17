@@ -78,7 +78,6 @@ In the above function, we get the notificationType as parameter which will of ty
 <br></br>
 
 ## Functions
-<br>
 
 * ***`requestPrice(for:) :`*** 
 Returns price against a price Id as string.<br></br>

@@ -2,7 +2,7 @@
 
 ## Installation:
 
-To install the **IAPHelper** Framework using CocoaPods, follow these steps:
+To install the **GenericIAPHelper** Framework using CocoaPods, follow these steps:
 
 1. Open your terminal.
 
@@ -18,11 +18,12 @@ pod init
 ```
 nano Podfile
 ```
-5. Add the **IAPHelper** pod to your Podfile:
+5. Add the **GenericIAPHelper** pod to your Podfile:
 ```
 target 'YourTargetName' do
   # Other pods if any
-  pod 'IAPHelper', '~> 1.0'
+  pod 'GenericIAPHelper'
+  pod 'GenericUtils'
 end
 ```
 Make sure to replace 'YourTargetName' with the actual name of your Xcode target.
@@ -37,10 +38,10 @@ pod install
 ```
 open YourProject.xcworkspace
 ```
-Now, you should be able to use the **IAPHelper** framework in your Swift project. Remember to import the framework in your Swift files where you need to use it:
+Now, you should be able to use the **GenericIAPHelper** framework in your Swift project. Remember to import the framework in your Swift files where you need to use it:
 
 ```
-import IAPHelper
+import GenericIAPHelper
 ```
 Make sure to replace 'YourProject' and 'YourTargetName' with the appropriate names used in your Xcode project.
 <br></br>

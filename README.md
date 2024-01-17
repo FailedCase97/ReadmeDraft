@@ -44,8 +44,10 @@ import IAPHelper
 ```
 Make sure to replace 'YourProject' and 'YourTargetName' with the appropriate names used in your Xcode project.
 <br></br>
-## Documentation:
-There are 6 types of notifications under the hood which will eventually be posted when the corresponding event will occure. To catch them from the app-end we have to register the notification. To register we can simply call the following function:
+
+## Integration:
+
+There are 6 types of notifications underlying the system, which are posted when the corresponding events occur. To capture these notifications from the application end, registration is required, and it can be achieved by calling the following function:
 ```
 SubscriptionManager.shared.notificationHandler.addObserver(self)
 ```
@@ -56,75 +58,75 @@ func updateRequiredThingsFor(
     notification: Notification?
 )
 ```
-<br></br>
+<br>
 
 ## Enums
 
 In the above function, we get the notificationType as parameter which will of type **IAPHelper.IAPurchaseState**. Based on notificationType, we can decide the next workflow. In the IAPurchaseState enum, we have few states among which following 6 are most used:
-* ***.purchaseSuccessful:*** When purchase is successful
 
-* ***.purchaseSuccessfulNotification:*** When purchase is successful
+* ***.purchaseSuccessfulNotification:*** a notification triggered when the purchase is successful.
 
-* ***.purchaseFailureNotification:*** When purchase is failed
+* ***.purchaseFailureNotification:*** a notification triggered upon the failure of a purchase transaction.
 
-* ***.restoreSuccessfulNotification:*** When restoration is successful
+* ***.restoreSuccessfulNotification:*** a notification triggered when the restoration is successful.
 
-* ***.restoreFailureNotification:*** When restoration is failed
+* ***.restoreFailureNotification:*** a notification triggered when the restoration process fails.
 
-* ***.promotionPurchaseStartNotification:*** 
+* ***.promotionPurchaseStartNotification:*** a notification triggered when the process of a promotional purchase is initiated.
 
-* ***.duplicatePurchasedNotification:*** When user tries to purchase an already purchased product
+* ***.duplicatePurchasedNotification:*** a notification triggered when a user attempts to purchase a product that has already been acquired.
 <br></br>
 
 ## Functions
+<br>
 
-***`requestPrice(for:) :`*** 
-Returns price against a price Id as string.
+* ***`requestPrice(for:) :`*** 
+Returns price against a price Id as string.<br></br>
 
-***`requestPriceInDecimal(for:):`*** 
-Returns price against a price Id in decimal.
+* ***`requestPriceInDecimal(for:):`*** 
+Returns price against a price Id in decimal.<br></br>
 
-***`initWithProductIDs(iapSharedSecret:):`*** 
-This initialization function is used for setting up notification observers and loading information related to product IDs.
+* ***`initWithProductIDs(iapSharedSecret:):`*** 
+This initialization function is used for setting up notification observers and loading information related to product IDs.<br></br>
 
-***`isNonComsumableTypeProduct(productID:):`***
-Returns true if the product is non-consumable product.
+* ***`isNonComsumableTypeProduct(productID:):`***
+Returns true if the product is non-consumable product.<br></br>
 
-***`isComsumableTypeProduct(productID:):`***
-Returns true if the product is consumable product.
+* ***`isComsumableTypeProduct(productID:):`***
+Returns true if the product is consumable product.<br></br>
 
-***`isSubscriptionTypeProduct(productID:):`***
-Returns true if product is of subscription type.
+* ***`isSubscriptionTypeProduct(productID:):`***
+Returns true if product is of subscription type.<br></br>
 
-***`refreshPurchaseableProducts() { skProducts in }:`***
-Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.
+* ***`refreshPurchaseableProducts() { skProducts in }:`***
+Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.<br></br>
 
-***`purchaseRequest(for: productID) { isPurchaseInitiated in }:`*** 
-Tries to purchase product against a product ID
+* ***`purchaseRequest(for: productID) { isPurchaseInitiated in }:`*** 
+Tries to purchase product against a product ID.<br></br>
 
-***`restorePurchase(afterProductLoading:,andShouldShowSuccessAlert:):`*** 
-Tries to restore purchase, if successful shows success alert, else shows failure alert.
+* ***`restorePurchase(afterProductLoading:,andShouldShowSuccessAlert:):`*** 
+Tries to restore purchase, if successful shows success alert, else shows failure alert.<br></br>
 
-***`isSubscribedOrUnlockedAll():`*** 
-Returns true if any subscription is currentlt running. For debugging purpose may return DEBUG_FOR_ISSUBSCRIBED to test premium features.
+* ***`isSubscribedOrUnlockedAll():`*** 
+Returns true if any subscription is currentlt running. For debugging purpose may return **DEBUG_FOR_ISSUBSCRIBED** to test premium features.<br></br>
 
-***`isIndividuallyPurchased(for productID:):`*** 
-Returns true against a product ID if some individual content available on the product is purchased 
+* ***`isIndividuallyPurchased(for productID:):`*** 
+Returns true against a product ID if some individual content available on the product is purchased.<br></br>
 
-***`getProductIDsInfo():`*** 
-Returns Array of productIDs 
+* ***`getProductIDsInfo():`*** 
+Returns Array of productIDs.<br></br>
 
-***`getProduct(for productId:):`*** 
-Returns necessary product info against a product ID
+* ***`getProduct(for productId:):`*** 
+Returns necessary product info against a product ID.<br></br>
 
-***`isCurrentSubscription(_ productId:):`*** 
-Returns true against a product ID if that subscription is currently on
+* ***`isCurrentSubscription(_ productId:):`*** 
+Returns true against a product ID if that subscription is currently on.<br></br>
 
-***`isTrialPeriodOngoing():`*** 
-Returns true if current subscription's trial days are still remaining 
+* ***`isTrialPeriodOngoing():`*** 
+Returns true if current subscription's trial days are still remaining.<br></br> 
 
-***`getFreeTrialPeriod(for:, inDays:):`***
-Returns number of trial days against a product ID 
+* ***`getFreeTrialPeriod(for:, inDays:):`***
+Returns number of trial days against a product ID.
 <br></br>
 ## InAppProduct
 

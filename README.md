@@ -50,11 +50,12 @@ Make sure to replace 'YourProject' and 'YourTargetName' with the appropriate nam
 
  Initializes the **SubscriptionManager** singleton instance with the specified parameters.
 
- - #### Parameters:
-    - `sharedSecret`: The shared secret used for in-app purchase validation.
-    - `subscriptionProductIDs`: An array of product identifiers for subscription products.
-    - `nonConsumableProductIDs`: An array of product identifiers for non-consumable products.
-    - `consumableProductIDs`: An array of product identifiers for consumable products.
+ **Parameters:**
+ 
+  * `sharedSecret`: The shared secret used for in-app purchase validation.
+  * `subscriptionProductIDs`: An array of product identifiers for subscription products.
+  * `nonConsumableProductIDs`: An array of product identifiers for non-consumable products.
+  * `consumableProductIDs`: An array of product identifiers for consumable products.
 
  Call this method to set up the **SubscriptionManager** with the necessary information for in-app purchases. This initialization should be performed once, typically during the application's launch.
 
@@ -107,53 +108,53 @@ In the above function, we get the notificationType as parameter which will of ty
 
 ## Functions
 
-* ***`requestPrice(for:) :`*** 
-Returns price against a price Id as string.<br></br>
-
-* ***`requestPriceInDecimal(for:):`*** 
-Returns price against a price Id in decimal.<br></br>
-
-* ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs: , consumableProductIDs:):`*** 
-This initialization function is used for setting up notification observers and loading information related to product IDs.<br></br>
-
-* ***`isNonComsumableTypeProduct(productID:):`***
-Returns true if the product is non-consumable product.<br></br>
-
-* ***`isComsumableTypeProduct(productID:):`***
-Returns true if the product is consumable product.<br></br>
-
-* ***`isSubscriptionTypeProduct(productID:):`***
-Returns true if product is of subscription type.<br></br>
-
-* ***`refreshPurchaseableProducts() { skProducts in }:`***
-Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.<br></br>
-
-* ***`purchaseRequest(for: productID) { isPurchaseInitiated in }:`*** 
-Tries to purchase product against a product ID.<br></br>
-
-* ***`restorePurchase(afterProductLoading:,andShouldShowSuccessAlert:):`*** 
-Tries to restore purchase, if successful shows success alert, else shows failure alert.<br></br>
-
-* ***`isSubscribedOrUnlockedAll():`*** 
-Returns true if any subscription is currentlt running. For debugging purpose may return **DEBUG_FOR_ISSUBSCRIBED** to test premium features.<br></br>
-
-* ***`isIndividuallyPurchased(for productID:):`*** 
-Returns true against a product ID if some individual content available on the product is purchased.<br></br>
-
 * ***`getProductIDsInfo():`*** 
-Returns Array of productIDs.<br></br>
+Returns Array of productIDs.
 
 * ***`getProduct(for productId:):`*** 
-Returns necessary product info against a product ID.<br></br>
-
-* ***`isCurrentSubscription(_ productId:):`*** 
-Returns true against a product ID if that subscription is currently on.<br></br>
-
-* ***`isTrialPeriodOngoing():`*** 
-Returns true if current subscription's trial days are still remaining.<br></br> 
+Returns necessary product info against a product ID.
 
 * ***`getFreeTrialPeriod(for:, inDays:):`***
 Returns number of trial days against a product ID.
+
+* ***`isCurrentSubscription(_ productId:):`*** 
+Returns true against a product ID if that subscription is currently on.
+
+* ***`isTrialPeriodOngoing():`*** 
+Returns true if current subscription's trial days are still remaining. 
+
+* ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs: , consumableProductIDs:):`*** 
+This initialization function is used for setting up notification observers and loading information related to product IDs.
+
+* ***`isNonComsumableTypeProduct(productID:):`***
+Returns true if the product is non-consumable product.
+
+* ***`isComsumableTypeProduct(productID:):`***
+Returns true if the product is consumable product.
+
+* ***`isSubscriptionTypeProduct(productID:):`***
+Returns true if product is of subscription type.
+
+* ***`isSubscribedOrUnlockedAll():`*** 
+Returns true if any subscription is currentlt running. For debugging purpose may return **DEBUG_FOR_ISSUBSCRIBED** to test premium features.
+
+* ***`isIndividuallyPurchased(for productID:):`*** 
+Returns true against a product ID if some individual content available on the product is purchased.
+
+* ***`purchaseRequest(for: productID) { isPurchaseInitiated in }:`*** 
+Tries to purchase product against a product ID.
+
+* ***`requestPrice(for:) :`*** 
+Returns price against a price Id as string.
+
+* ***`requestPriceInDecimal(for:):`*** 
+Returns price against a price Id in decimal.
+
+* ***`refreshPurchaseableProducts() { skProducts in }:`***
+Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.
+
+* ***`restorePurchase(afterProductLoading:,andShouldShowSuccessAlert:):`*** 
+Tries to restore purchase, if successful shows success alert, else shows failure alert.
 <br></br>
 ## InAppProduct
 

@@ -7,23 +7,22 @@ To install the **GenericIAPHelper** Framework using CocoaPods, follow these step
 1. Open your terminal.
 
 2. Navigate to your Xcode project directory using the cd command:
-```
+``` bash
 cd /path/to/your/project
 ```
 3. Create a Podfile if you don't have one already:
-```
+``` bash
 pod init
 ```
 4. Open the Podfile with your preferred text editor:
-```
+``` bash
 nano Podfile
 ```
 5. Add the **GenericIAPHelper** pod to your Podfile:
-```
+``` bash
 target 'YourTargetName' do
   # Other pods if any
   pod 'GenericIAPHelper'
-  pod 'GenericUtils'
 end
 ```
 Make sure to replace 'YourTargetName' with the actual name of your Xcode target.
@@ -31,16 +30,16 @@ Make sure to replace 'YourTargetName' with the actual name of your Xcode target.
 6. Save the Podfile and exit the text editor.
 
 7. Install the pods by running the following command in the terminal:
-```
+``` bash
 pod install
 ```
 8. After the installation is complete, open your Xcode workspace using the generated .xcworkspace file:
-```
+``` bash
 open YourProject.xcworkspace
 ```
 Now, you should be able to use the **GenericIAPHelper** framework in your Swift project. Remember to import the framework in your Swift files where you need to use it:
 
-```
+``` bash
 import GenericIAPHelper
 ```
 Make sure to replace 'YourProject' and 'YourTargetName' with the appropriate names used in your Xcode project.
@@ -48,17 +47,45 @@ Make sure to replace 'YourProject' and 'YourTargetName' with the appropriate nam
 
 ## Integration:
 
-There are 6 types of notifications underlying the system, which are posted when the corresponding events occur. To capture these notifications from the application end, registration is required, and it can be achieved by calling the following function:
+
+ Initializes the **SubscriptionManager** singleton instance with the specified parameters.
+
+ - #### Parameters:
+    - `sharedSecret`: The shared secret used for in-app purchase validation.
+    - `subscriptionProductIDs`: An array of product identifiers for subscription products.
+    - `nonConsumableProductIDs`: An array of product identifiers for non-consumable products.
+    - `consumableProductIDs`: An array of product identifiers for consumable products.
+
+ Call this method to set up the **SubscriptionManager** with the necessary information for in-app purchases. This initialization should be performed once, typically during the application's launch.
+
+ **Example usage:**
+ ```swift
+ SubscriptionManager.shared.initWithProductIDsWithIapSharedSecret(
+     sharedSecret: "YOUR_SHARED_SECRET",
+     subscriptionProductIDs: ["subscriptionProductID1", "subscriptionProductID2"],
+     nonConsumableProductIDs: ["nonConsumableProductID1", "nonConsumableProductID2"],
+     consumableProductIDs: ["consumableProductID1", "consumableProductID2"]
+ )
 ```
+<br></br>
+There are 6 types of notifications underlying the system, which are posted when the corresponding events occur. To capture these notifications from the application end, registration is required, and it can be achieved by calling the following function:
+``` swift
 SubscriptionManager.shared.notificationHandler.addObserver(self)
 ```
-The following class have to conform the **SubManagerNotificationObserver** protocol and implement the following function
-```
+The following class have to conform the **SubManagerNotificationObserver** protocol and implement the following function:
+``` swift
 func updateRequiredThingsFor(
     notificationType: IAPHelper.IAPurchaseState,
     notification: Notification?
 )
 ```
+<br></br>
+Finally call the following function to start the in-app helper functionality by refreshing purchaseable products and taking actions on refresh receipt completion.
+
+``` swift
+startInAppHelper()
+```
+
 <br>
 
 ## Enums
@@ -86,7 +113,7 @@ Returns price against a price Id as string.<br></br>
 * ***`requestPriceInDecimal(for:):`*** 
 Returns price against a price Id in decimal.<br></br>
 
-* ***`initWithProductIDs(iapSharedSecret:):`*** 
+* ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs: , consumableProductIDs:):`*** 
 This initialization function is used for setting up notification observers and loading information related to product IDs.<br></br>
 
 * ***`isNonComsumableTypeProduct(productID:):`***

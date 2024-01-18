@@ -125,7 +125,7 @@ Returns true against a product ID if that subscription is currently on.<br></br>
 * ***`isTrialPeriodOngoing():`*** 
 Returns true if current subscription's trial days are still remaining.<br></br>
 
-* ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs: , consumableProductIDs:):`*** 
+* ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs:, consumableProductIDs:):`*** 
 This initialization function is used for setting up notification observers and loading information related to product IDs.<br></br>
 
 * ***`isNonComsumableTypeProduct(productID:):`***

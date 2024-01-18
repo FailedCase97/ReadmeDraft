@@ -109,49 +109,49 @@ In the above function, we get the notificationType as parameter which will of ty
 ## Functions
 
 * ***`getProductIDsInfo():`*** 
-Returns Array of productIDs.
+Returns Array of productIDs.<br></br>
 
 * ***`getProduct(for productId:):`*** 
-Returns necessary product info against a product ID.
+Returns necessary product info against a product ID.<br></br>
 
 * ***`getFreeTrialPeriod(for:, inDays:):`***
-Returns number of trial days against a product ID.
+Returns number of trial days against a product ID.<br></br>
 
 * ***`isCurrentSubscription(_ productId:):`*** 
-Returns true against a product ID if that subscription is currently on.
+Returns true against a product ID if that subscription is currently on.<br></br>
 
 * ***`isTrialPeriodOngoing():`*** 
-Returns true if current subscription's trial days are still remaining. 
+Returns true if current subscription's trial days are still remaining.<br></br>
 
 * ***`initWithProductIDs(iapSharedSecret:, subscriptionProductIDs:, nonConsumableProductIDs: , consumableProductIDs:):`*** 
-This initialization function is used for setting up notification observers and loading information related to product IDs.
+This initialization function is used for setting up notification observers and loading information related to product IDs.<br></br>
 
 * ***`isNonComsumableTypeProduct(productID:):`***
-Returns true if the product is non-consumable product.
+Returns true if the product is non-consumable product.<br></br>
 
 * ***`isComsumableTypeProduct(productID:):`***
-Returns true if the product is consumable product.
+Returns true if the product is consumable product.<br></br>
 
 * ***`isSubscriptionTypeProduct(productID:):`***
-Returns true if product is of subscription type.
+Returns true if product is of subscription type.<br></br>
 
 * ***`isSubscribedOrUnlockedAll():`*** 
-Returns true if any subscription is currentlt running. For debugging purpose may return **DEBUG_FOR_ISSUBSCRIBED** to test premium features.
+Returns true if any subscription is currentlt running. For debugging purpose may return **DEBUG_FOR_ISSUBSCRIBED** to test premium features.<br></br>
 
 * ***`isIndividuallyPurchased(for productID:):`*** 
-Returns true against a product ID if some individual content available on the product is purchased.
+Returns true against a product ID if some individual content available on the product is purchased.<br></br>
 
 * ***`purchaseRequest(for: productID) { isPurchaseInitiated in }:`*** 
-Tries to purchase product against a product ID.
+Tries to purchase product against a product ID.<br></br>
 
 * ***`requestPrice(for:) :`*** 
-Returns price against a price Id as string.
+Returns price against a price Id as string.<br></br>
 
 * ***`requestPriceInDecimal(for:):`*** 
-Returns price against a price Id in decimal.
+Returns price against a price Id in decimal.<br></br>
 
 * ***`refreshPurchaseableProducts() { skProducts in }:`***
-Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.
+Reloads offline saved receipts and provides an optional completion handler for fetching associated InAppProduct instances.<br></br>
 
 * ***`restorePurchase(afterProductLoading:,andShouldShowSuccessAlert:):`*** 
 Tries to restore purchase, if successful shows success alert, else shows failure alert.

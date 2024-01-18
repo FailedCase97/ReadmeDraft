@@ -108,6 +108,9 @@ In the above function, we get the notificationType as parameter which will of ty
 
 ## Functions
 
+The following public functions within the **SubscriptionManager** can be invoked to perform specific actions:
+
+
 * ***`getProductIDsInfo():`*** 
 Returns Array of productIDs.<br></br>
 

@@ -80,9 +80,6 @@ func updateRequiredThingsFor(
     notification: Notification?
 )
 ```
-<br></br>
-Finally call **startInAppHelper()** function to start the in-app helper functionality by refreshing purchaseable products and taking actions on refresh receipt completion.
-
 <br>
 
 ## Enums
